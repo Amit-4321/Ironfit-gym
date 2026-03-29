@@ -1,0 +1,134 @@
+/* Main Container */
+.container {
+    padding: 80px 20px;
+    background: radial-gradient(circle at top, #0a0a0a, #000);
+    min-height: 100vh;
+    color: #fff;
+  }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00f5ff, #7a5cff, #ff4ecd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .header p {
+    color: #aaa;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+  }
+  
+  /* Grid */
+  .jobs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+  
+  /* Card */
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Glow border effect */
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(120deg, #00f5ff, #7a5cff, #ff4ecd);
+    -webkit-mask: 
+      linear-gradient(#000 0 0) content-box, 
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: 0.4s;
+  }
+  
+  .card:hover::before {
+    opacity: 1;
+  }
+  
+  /* Hover animation */
+  .card:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+  
+  /* Title */
+  .card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Description */
+  .card p {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 15px;
+  }
+  
+  /* List */
+  .card ul {
+    padding-left: 18px;
+    color: #aaa;
+    font-size: 13px;
+  }
+  
+  .card ul li {
+    margin-bottom: 6px;
+  }
+  
+  /* Button */
+  .btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #00f5ff, #7a5cff);
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Button hover */
+  .btn:hover {
+    box-shadow: 0 0 15px #7a5cff, 0 0 25px #00f5ff;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive */
+  @media (max-width: 1000px) {
+    .jobs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .jobs {
+      grid-template-columns: 1fr;
+    }
+  
+    .header h1 {
+      font-size: 28px;
+    }
+  }

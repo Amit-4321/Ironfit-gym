@@ -1,0 +1,23 @@
+.container {
+    padding: 80px 20px;
+    background: radial-gradient(circle at top, #0a0a0a, #000);
+    min-height: 100vh;
+    color: #fff;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin-top: 25px;
+    font-size: 20px;
+  }
+  
+  p {
+    color: #bbb;
+    line-height: 1.6;
+  }
